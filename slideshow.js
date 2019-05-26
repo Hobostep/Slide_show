@@ -13,12 +13,12 @@ for (let i = 0; i < pin.length; i++) {
 }
 
 let width_t = 0;
-let width_size = slide[0].clientWidth;
 let check_color = Math.round(slide.length / 2) - 1;
 changeColor();
 
 // ===============================================
 function slideRight() {
+  let width_size = slide[0].clientWidth;
   if (width_t != width_size * (Math.round(slide.length / 2) - 1)) {
     width_t += width_size;
     let str = "translate(" + width_t + "px)";
@@ -39,6 +39,7 @@ function slideRight() {
 }
 // ===============================================
 function slideLeft() {
+  let width_size = slide[0].clientWidth;
   if (width_t != -1 * width_size * (Math.round(slide.length / 2) - 1)) {
     width_t -= width_size;
     let str = "translate(" + width_t + "px)";
@@ -69,6 +70,7 @@ function changeColor() {
 }
 // ================================================
 function changeSlide(index) {
+  let width_size = slide[0].clientWidth;
   check_color = index;
   let center_index = Math.round(slide.length / 2) - 1;
   let target = center_index - index;
